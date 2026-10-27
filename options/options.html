@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ㄹㄹ필터</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <p class="eyebrow">Ruliweb Filter</p>
+        <h1>ㄹㄹ필터</h1>
+      </header>
+
+      <section class="panel" aria-labelledby="display-heading">
+        <h2 id="display-heading">표시</h2>
+        <label class="check-row">
+          <input id="show-board-labels" type="checkbox">
+          <span>게시판 표시</span>
+        </label>
+      </section>
+
+      <section class="panel" aria-labelledby="traffic-heading">
+        <h2 id="traffic-heading">요청 제한</h2>
+        <div class="field-grid">
+          <label class="field">
+            <span>페이지당 게시판명 확인 상한</span>
+            <input id="max-detail-fetches-per-page" type="number" min="1" max="30" step="1">
+          </label>
+          <label class="field">
+            <span>요청 간격 ms</span>
+            <input id="detail-fetch-delay-ms" type="number" min="500" max="10000" step="100">
+          </label>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="filter-heading">
+        <h2 id="filter-heading">필터</h2>
+        <label class="field">
+          <span>숨긴 게시판 ID</span>
+          <textarea id="hidden-boards" rows="7" spellcheck="false" placeholder="300143|유머 게시판"></textarea>
+        </label>
+        <label class="field">
+          <span>숨긴 게시판 탭</span>
+          <textarea id="hidden-board-tabs" rows="7" spellcheck="false" placeholder="300143|잡담|유머 게시판&#10;300143::유머|유머 게시판 / 유머"></textarea>
+        </label>
+        <label class="field">
+          <span>숨긴 제목 말머리</span>
+          <textarea id="hidden-keywords" rows="7" spellcheck="false" placeholder="니케&#10;스포"></textarea>
+        </label>
+      </section>
+
+      <section class="panel" aria-labelledby="document-heading">
+        <h2 id="document-heading">필터 문서</h2>
+        <div class="document-actions">
+          <button id="export-filters" type="button">내보내기</button>
+          <button id="import-filters" type="button">가져오기</button>
+          <input id="filter-file" type="file" accept="application/json,.json">
+        </div>
+      </section>
+
+      <footer class="actions">
+        <button id="save" type="button">저장</button>
+        <button id="reset" type="button">초기화</button>
+        <span id="status" role="status" aria-live="polite"></span>
+      </footer>
+    </main>
+
+    <script src="../src/core.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

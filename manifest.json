@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "ㄹㄹ필터",
+  "version": "0.1.1",
+  "description": "루리웹 목록에서 게시판, 탭, 제목 말머리 기준으로 게시물을 필터링합니다.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://bbs.ruliweb.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://bbs.ruliweb.com/best*", "https://bbs.ruliweb.com/*/board/*"],
+      "js": ["src/core.js", "src/content.js"],
+      "css": ["src/styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "ㄹㄹ필터"
+  }
+}

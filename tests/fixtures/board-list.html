@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>ㄹㄹ필터 board fixture</title>
+    <link rel="stylesheet" href="../../src/styles.css">
+    <style>
+      body {
+        margin: 24px;
+        font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      }
+
+      #board_list {
+        width: 722px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+      }
+
+      .divsn {
+        width: 92px;
+      }
+
+      .subject_link {
+        color: #222;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="hidden" id="bbs_name" value="유머 게시판">
+    <input type="hidden" id="board_id" value="300143">
+
+    <div id="board_list">
+      <table>
+        <thead>
+          <tr>
+            <th class="divsn">구분</th>
+            <th>제목</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table_body blocktarget">
+            <td class="divsn">잡담</td>
+            <td class="subject">
+              <a class="subject_link deco" href="https://bbs.ruliweb.com/community/board/300143/read/75633950" title="니케) 새 이벤트">니케) 새 이벤트</a>
+            </td>
+          </tr>
+          <tr class="table_body blocktarget">
+            <td class="divsn">자작그림</td>
+            <td class="subject">
+              <a class="subject_link deco" href="https://bbs.ruliweb.com/community/board/300143/read/75633951" title="작업물">작업물</a>
+            </td>
+          </tr>
+          <tr class="table_body blocktarget">
+            <td class="divsn">잡담</td>
+            <td class="subject">
+              <a class="subject_link deco" href="https://bbs.ruliweb.com/community/board/300142/read/30619571" title="다른 게시판 글">다른 게시판 글</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      window.chrome = {
+        storage: {
+          local: {
+            data: {
+              rbt_settings: {
+                hiddenBoardTabs: { "300143::잡담": "유머 / 잡담" },
+                hiddenKeywords: { "니케": "니케" }
+              }
+            },
+            get(keys, callback) {
+              const result = {};
+              keys.forEach((key) => {
+                result[key] = this.data[key];
+              });
+              callback(result);
+            },
+            set(value, callback) {
+              Object.assign(this.data, value);
+              callback && callback();
+            }
+          }
+        }
+      };
+    </script>
+    <script src="../../src/core.js"></script>
+    <script src="../../src/content.js"></script>
+  </body>
+</html>

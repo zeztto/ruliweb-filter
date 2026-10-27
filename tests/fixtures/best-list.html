@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>ㄹㄹ필터 best fixture</title>
+    <link rel="stylesheet" href="../../src/styles.css">
+    <style>
+      body {
+        margin: 24px;
+        font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      }
+
+      #best_body {
+        width: 722px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .subject_link {
+        color: #222;
+        text-decoration: none;
+      }
+
+      .aaicon.soon_best {
+        display: inline-block;
+        margin-right: 4px;
+        padding: 0 3px;
+        border: 1px solid #f0a;
+        color: #c07;
+        font-size: 11px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="https://bbs.ruliweb.com/best/board/300143">유머 게시판</a>
+      <a href="https://bbs.ruliweb.com/best/board/300004">NS 정보</a>
+    </nav>
+
+    <div id="best_body">
+      <table>
+        <tbody>
+          <tr class="table_body blocktarget">
+            <td class="id">1</td>
+            <td class="subject">
+              <span class="aaicon soon_best">곧</span>
+              <a class="subject_link deco flex center" href="https://bbs.ruliweb.com/best/board/300143/read/75633175?m=all&amp;t=now" title="트릭컬/스포) 새 이벤트">
+                <strong class="text_over">트릭컬/스포) 새 이벤트</strong>
+              </a>
+            </td>
+          </tr>
+          <tr class="table_body blocktarget">
+            <td class="id">2</td>
+            <td class="subject">
+              <a class="subject_link deco flex center" href="https://bbs.ruliweb.com/best/board/300004/read/2356384?m=all&amp;t=now" title="[NS 정보] 새 소식">
+                <strong class="text_over">[NS 정보] 새 소식</strong>
+              </a>
+            </td>
+          </tr>
+          <tr class="table_body blocktarget">
+            <td class="id">3</td>
+            <td class="subject">
+              <span class="aaicon soon_best">곧</span>
+              <a class="subject_link deco flex center" href="https://bbs.ruliweb.com/best/board/300143/read/75633176?m=all&amp;t=now" title="일반 제목">
+                <strong class="text_over">일반 제목</strong>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      window.chrome = {
+        storage: {
+          local: {
+            data: {
+              rbt_settings: {
+                hiddenKeywords: { "트릭컬": "트릭컬" }
+              }
+            },
+            get(keys, callback) {
+              const result = {};
+              keys.forEach((key) => {
+                result[key] = this.data[key];
+              });
+              callback(result);
+            },
+            set(value, callback) {
+              Object.assign(this.data, value);
+              callback && callback();
+            }
+          }
+        }
+      };
+    </script>
+    <script src="../../src/core.js"></script>
+    <script src="../../src/content.js"></script>
+  </body>
+</html>
